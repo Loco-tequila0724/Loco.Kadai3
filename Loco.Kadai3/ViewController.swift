@@ -1,19 +1,27 @@
-//
-//  ViewController.swift
-//  Loco.Kadai3
-//
-//  Created by 日高隼人 on 2021/06/13.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet private weak var inputTextFieldLeft: UITextField!
+    @IBOutlet private weak var inputTextFieldRight: UITextField!
+    @IBOutlet private weak var changeLeftSwitch: UISwitch!
+    @IBOutlet private weak var changeRightSwitch: UISwitch!
+    @IBOutlet private weak var leftNumberLabel: UILabel!
+    @IBOutlet private weak var rightNumberLabel: UILabel!
+    @IBOutlet private weak var calculateDisplayLabel: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    private func calculationAndDisplay() {
+        let leftFieldNum = Int(inputTextFieldLeft.text!) ?? 0
+        let rightFieldNum = Int(inputTextFieldRight.text!) ?? 0
+
+        let calculateNumberLeft = changeLeftSwitch.isOn ? leftFieldNum * -1 : leftFieldNum
+        let calculateNumberRight = changeRightSwitch.isOn ? rightFieldNum * -1 : rightFieldNum
+
+        leftNumberLabel.text = String(calculateNumberLeft)
+        rightNumberLabel.text = String(calculateNumberRight)
+        calculateDisplayLabel.text = String(calculateNumberLeft + calculateNumberRight)
     }
 
-
+    @IBAction private func calculateButton(_ sender: Any) {
+        calculationAndDisplay()
+    }
 }
-
