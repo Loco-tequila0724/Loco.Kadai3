@@ -9,7 +9,7 @@ class ViewController: UIViewController {
     @IBOutlet private weak var rightNumberLabel: UILabel!
     @IBOutlet private weak var calculateDisplayLabel: UILabel!
 
-    private func calculationAndDisplay() {
+    private func calculateAndDisplay() {
         let leftFieldNum = Int(inputTextFieldLeft.text!) ?? 0
         let rightFieldNum = Int(inputTextFieldRight.text!) ?? 0
 
@@ -22,6 +22,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction private func calculateButton(_ sender: Any) {
-        calculationAndDisplay()
+        calculateAndDisplay()
     }
 }
