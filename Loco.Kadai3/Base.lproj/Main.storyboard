@@ -137,9 +137,9 @@
                         <outlet property="calculateDisplayLabel" destination="3yE-R1-FXP" id="OKX-AG-7a6"/>
                         <outlet property="changeLeftSwitch" destination="MQH-Tt-4ib" id="3XJ-eT-JJF"/>
                         <outlet property="changeRightSwitch" destination="xGv-fl-YCp" id="wSV-VE-mI8"/>
-                        <outlet property="inputTextFieldLeft" destination="RYD-je-9T9" id="CWI-DK-la8"/>
-                        <outlet property="inputTextFieldRight" destination="dFz-DM-3Jr" id="oPN-ju-q2s"/>
+                        <outlet property="leftInputTextField" destination="RYD-je-9T9" id="F7a-Dd-0p7"/>
                         <outlet property="leftNumberLabel" destination="9sl-WK-25c" id="I5q-K8-3vI"/>
+                        <outlet property="rightInputTextField" destination="dFz-DM-3Jr" id="qxF-cb-Bgz"/>
                         <outlet property="rightNumberLabel" destination="nUF-A6-ZYF" id="33J-os-URR"/>
                     </connections>
                 </viewController>
