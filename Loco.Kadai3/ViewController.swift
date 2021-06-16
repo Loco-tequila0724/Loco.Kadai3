@@ -1,8 +1,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet private weak var inputTextFieldLeft: UITextField!
-    @IBOutlet private weak var inputTextFieldRight: UITextField!
+    @IBOutlet private weak var leftInputTextField: UITextField!
+    @IBOutlet private weak var rightInputTextField: UITextField!
     @IBOutlet private weak var changeLeftSwitch: UISwitch!
     @IBOutlet private weak var changeRightSwitch: UISwitch!
     @IBOutlet private weak var leftNumberLabel: UILabel!
@@ -10,15 +10,14 @@ class ViewController: UIViewController {
     @IBOutlet private weak var calculateDisplayLabel: UILabel!
 
     private func calculateAndDisplay() {
-        let leftFieldNum = Int(inputTextFieldLeft.text!) ?? 0
-        let rightFieldNum = Int(inputTextFieldRight.text!) ?? 0
+        let leftFieldNum = Int(leftInputTextField.text!) ?? 0
+        let rightFieldNum = Int(rightInputTextField.text!) ?? 0
+        let leftSignedNumber = changeLeftSwitch.isOn ? -leftFieldNum : leftFieldNum
+        let rightSingedNumber = changeRightSwitch.isOn ? -rightFieldNum : rightFieldNum
 
-        let calculateNumberLeft = changeLeftSwitch.isOn ? leftFieldNum * -1 : leftFieldNum
-        let calculateNumberRight = changeRightSwitch.isOn ? rightFieldNum * -1 : rightFieldNum
-
-        leftNumberLabel.text = String(calculateNumberLeft)
-        rightNumberLabel.text = String(calculateNumberRight)
-        calculateDisplayLabel.text = String(calculateNumberLeft + calculateNumberRight)
+        leftNumberLabel.text = String(leftSignedNumber)
+        rightNumberLabel.text = String(rightSingedNumber)
+        calculateDisplayLabel.text = String(leftSignedNumber + rightSingedNumber)
     }
 
     @IBAction private func calculateButton(_ sender: Any) {
